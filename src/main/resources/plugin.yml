@@ -1,0 +1,9 @@
+name: UnstoppableGamersMod
+main: me.totalfreedom.totalfreedommod.TotalFreedomMod
+version: ${tfm.build.version}
+description: Plugin for the UnstoppableGamers server.
+depend: [Aero, WorldEdit]
+softdepend: [BukkitTelnet, Essentials, LibsDisguises]
+authors: [angelomazza1993]
+
+# plugin.yml is no longer used to define commands.
