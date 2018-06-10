@@ -64,11 +64,11 @@ public class Command_blockpvp extends FreedomCommand
 
         if (args[0].equals("all"))
         {
-            FUtil.adminAction(sender.getName(), "Disabling PVP for all non-admins", true);
+            FUtil.adminAction(sender.getName(), "Disabling PVP for all non Senior Admins", true);
             int counter = 0;
             for (Player player : server.getOnlinePlayers())
             {
-                if (!plugin.al.isAdmin(player))
+                if (!plugin.al.isSeniorAdmin(player))
                 {
                     final FPlayer playerdata = plugin.pl.getPlayer(player);
                     playerdata.setPvpBlocked(true);
@@ -113,9 +113,9 @@ public class Command_blockpvp extends FreedomCommand
         }
         else
         {
-            if (plugin.al.isAdmin(p))
+            if (plugin.al.isSeniorAdmin(p))
             {
-                msg(p.getName() + " is an admin, and cannot have their PVP disabled.");
+                msg(p.getName() + " is a Senior Admin, and cannot have their PVP disabled.");
                 return true;
             }
 
