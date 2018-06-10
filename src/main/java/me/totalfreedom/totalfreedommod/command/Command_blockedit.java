@@ -67,7 +67,7 @@ public class Command_blockedit extends FreedomCommand
             int counter = 0;
             for (final Player player : this.server.getOnlinePlayers())
             {
-                if (!plugin.al.isAdmin((CommandSender) player))
+                if (!plugin.al.isSeniorAdmin((CommandSender) player))
                 {
                     final FPlayer playerdata = plugin.pl.getPlayer(player);
                     playerdata.setEditBlocked(true);
@@ -112,7 +112,7 @@ public class Command_blockedit extends FreedomCommand
         }
         else
         {
-            if (plugin.al.isAdmin((CommandSender) player2))
+            if (plugin.al.SeniorisAdmin((CommandSender) player2))
             {
                 msg(player2.getName() + " is an admin, and cannot have their block edits blocked.");
                 return true;
