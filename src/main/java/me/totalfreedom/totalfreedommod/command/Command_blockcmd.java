@@ -40,18 +40,18 @@ public class Command_blockcmd extends FreedomCommand
 
         if (args[0].equals("-a"))
         {
-            FUtil.adminAction(sender.getName(), "Blocking commands for all non-admins", true);
+            FUtil.adminAction(sender.getName(), "Blocking commands for all Senior Admins", true);
             int counter = 0;
             for (Player player : server.getOnlinePlayers())
             {
-                if (isAdmin(player))
+                if (isSeniorAdmin(player))
                 {
                     continue;
                 }
 
                 counter += 1;
                 plugin.pl.getPlayer(player).setCommandsBlocked(true);
-                msg(player, "Your commands have been blocked by an admin.", ChatColor.RED);
+                msg(player, "Your commands have been blocked by a staff member.", ChatColor.RED);
             }
 
             msg("Blocked commands for " + counter + " players.");
@@ -66,9 +66,9 @@ public class Command_blockcmd extends FreedomCommand
             return true;
         }
 
-        if (isAdmin(player))
+        if (isSeniorAdmin(player))
         {
-            msg(player.getName() + " is an admin, and cannot have their commands blocked.");
+            msg(player.getName() + " is a Senior Admin, and cannot have their commands blocked.");
             return true;
         }
 
